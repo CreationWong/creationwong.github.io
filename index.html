@@ -25,10 +25,25 @@
   <body>
 
     <p>此数据库由<a href="https://github.com/">GitHub</a>托管</p>
+    function show(){ 
+var date = new Date(); //日期对象 
+var now = "0"; 
+now = date.getFullYear()+"年"; 
+now = now + (date.getMonth()+1)+"月"; 
+now = now + date.getDate()+"日"; 
+now = now + date.getHours()+"时"; 
+now = now + date.getMinutes()+"分"; 
+now = now + date.getSeconds()+"秒";
+now = now + date.getMilliseconds()+"毫秒"; 
+document.getElementById("nowDiv").innerHTML = now; 
+setTimeout("show()",1); 
+} 
+</script> 
+<body onload="show()"> 
+<div id="nowDiv"></div> 
     <h2>响应完成时间：</h2>
     <p id="time"><script src="js/time.js"></script></p> 
-   
-  </body>
+    </body>
 </html>
   
     
