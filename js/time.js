@@ -1,6 +1,6 @@
-//毫秒级本地时间
-function show(){ 
-var date = new Date(); //日期对象 
+/*毫秒级本地时间*/
+(function show(){ 
+var date = new Date(); 
 var now = "0"; 
 now = date.getFullYear()+"年"; 
 now = now + (date.getMonth()+1)+"月"; 
@@ -11,4 +11,4 @@ now = now + date.getSeconds()+"秒";
 now = now + date.getMilliseconds()+"毫秒"; 
 document.getElementById("nowDiv").innerHTML = now; 
 setTimeout("show()",1); 
-} 
+});
