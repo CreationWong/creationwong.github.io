@@ -1,50 +1,25 @@
-<!DOCTYPE html>
+<!DOCTYPE html> <!-- H5网页 -->
 <html>
 <head>
 <meta charset="utf-8">
 <title>CreationWong 数据库</title> 
 <meta name="CreationWong" content="Runoob">
-<link rel="shortcut icon" href="https://raw.githubusercontent.com/CreationWong/creationwong.github.io/main/photo/logo-01.jpg">
+<link rel="shortcut icon" href="https://creationwong.github.io/photo/logo-01.jpg">
 </head>
 <body>
 
 <h1>CreationWong 数据库</h1>
-<hr>
-<h2><a id="home">定位</h2>
-<p><a href="#c">C 分区</a></p>
-<hr>
-<h2><a id="c">C</h2>
-<p>Cheerilee's Garden：<a href="other/Cheerilee's Garden.html">《Cheerilee's Garden》在线阅读</a>或<a href="other/Cheerilee's Garden.html" download="Cheerilee's Garden.html">下载离线版本</a><br>中文版本：<a href="other/车厘子的花园.html">《车厘子的花园》在线阅读</a>或<a href="other/车厘子的花园.html" download="车厘子的花园.html">下载离线版本</a><br>警告：<br>此小说含有大量血腥、恐怖、恶心、心理扭曲和少量色情内容！<br>未成年人禁止阅读！！！<br>如果你感到不适，请立即停止阅读！如果你看完后心理状态十分不好，请立即咨询心理医生！</p>
-<hr>
-<p><a href="#home">返回首页</a></p>
-<hr>
+<p id="demo">
+JavaScript 能改变 HTML 元素的内容。
+</p>
+<script>
+function myFunction()
+{
+	x=document.getElementById("demo");  // 找到元素
+	x.innerHTML="Hello JavaScript!";    // 改变内容
+}
+</script>
+<button type="button" onclick="myFunction()">点击</button>
+<script src="https://creationwong.github.io/js/time.js> </script>
 </body>
 </html>
-
-<html>
-  <body>
-
-    <p>此数据库由<a href="https://github.com/">GitHub</a>托管</p>
-<script>
- function show(){ 
-var date = new Date(); //日期对象 
-var now = "0"; 
-now = date.getFullYear()+"年"; 
-now = now + (date.getMonth()+1)+"月"; 
-now = now + date.getDate()+"日"; 
-now = now + date.getHours()+"时"; 
-now = now + date.getMinutes()+"分"; 
-now = now + date.getSeconds()+"秒";
-now = now + date.getMilliseconds()+"毫秒"; 
-document.getElementById("nowDiv").innerHTML = now; 
-setTimeout("show()",1); 
-} 
-</script> 
-<body onload="show()"> 
-<div id="nowDiv"></div> 
-    <h2>响应完成时间：</h2>
-    <p id="time"><script src="js/time.js"></script></p> 
-    </body>
-</html>
-  
-    
