@@ -1,0 +1,66 @@
+<!doctype html>
+<html> 
+	<head> 
+		<meta charset="utf-8"> 
+		<title>帝王的小站❤️</title> 
+		<script>
+			function setCookie(cname,cvalue,exdays){
+				var d = new Date();
+				d.setTime(d.getTime()+(exdays*24*60*60*1000));
+				var expires = "expires="+d.toGMTString();
+				document.cookie = cname+"="+cvalue+"; "+expires;
+			}
+			function getCookie(cname){
+				var name = cname + "=";
+				var ca = document.cookie.split(';');
+				for(var i=0;
+				i<ca.length;
+				i++){
+					var c = ca[i].trim();
+					if (c.indexOf(name)==0){
+						return c.substring(name.length,c.length);
+					}
+				}
+				return "";
+			}
+			function checkCookie(){
+				var user=getCookie("username");
+				if (user!=""){
+					alert("欢迎 " + user + " 来看Teio❤️");
+                    var r=confirm("Teio给 " + user + "桑 准备的礼物怎么样？");
+	                if (r==true){
+		                         alert("Teio知道托雷纳桑~喜欢的❤️");
+                                 alert("以后托雷纳桑~❤️记得爱Teio哟");
+	                }else {
+		                    alert("Teio的礼物你不喜欢吗？");
+                            alert("Teio好伤心");
+                            while(1==1){alert('托雷纳桑~是个坏蛋！')}
+	                 }
+				}
+				else{
+					alert("你好托雷纳桑~");
+					alert("看来托雷纳桑~发现了Trio❤️");
+					var name=prompt("托雷纳桑~告诉帝王你的名字吧❤️","Name");
+					if (name!=null && name!=""){
+						setCookie("name",name,30);
+						alert(name +" 原来托雷纳桑~名字是这个啊❤️");
+						alert(name +" Teio记住了❤️");
+						alert(name +"桑❤️ Trio给 "+ name +" 送上礼物💌");
+						alert("希望 "+ name +" 喜欢❤️Teio❤️的礼物");
+						document.location.href="//creationwong.github.io/music/TeioTeioTeiTeio.mp3";
+					}
+					else{
+						
+						alert("托雷纳桑？");
+						alert("原来托雷纳桑不喜欢帝王！");
+						alert("不愿意告诉帝王名字！！");
+						while(1==1){
+						alert('托雷纳桑~是个坏蛋！')}
+				   }
+                }
+			}
+		</script> 
+	</head> 
+	<body onload="checkCookie()">  
+	</body>
+</html>
