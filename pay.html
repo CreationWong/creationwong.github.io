@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>付款</title>
+</head>
+<body>
+
+</body>
+</html>
+<script language="javascript">
+
+    var ua = navigator.userAgent.toLowerCase();
+    if(ua.match(/MicroMessenger/i)=="micromessenger") {
+        wechat();
+    } else if(ua.match(/AlipayClient/i)=="alipayclient"){
+        alipay();
+    } else{
+        alert("请使用微信或支付宝付款");
+    }
+
+    function wechat(){
+        window.open("HTTPS://QR.ALIPAY.COM/FKX08439VKV0DWTLDSTT7A");
+    }
+
+    function alipay(){
+        window.open("https://qr.alipay.com/fkx10308tkvkgpo5b0or064?t=1647484569179");
+    }
+</script>
