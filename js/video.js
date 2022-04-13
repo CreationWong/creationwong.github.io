@@ -153,3 +153,21 @@ gj_h3(part)
     	break;
  	}
 }
+//------------------------
+//约会大作战 标题
+function yhdzz_h3(season,part)
+{ 
+  document.getElementById("now").innerHTML="约会大作战 第"+season+"季 "+" 第"+part+"集";
+  document.getElementById("now_up").innerHTML="正在播放："+"约会大作战 第"+season+"季 "+" 第"+part+"集";
+} 
+function yhdzz(season,part)
+{ 
+	switch (season){
+  		case 4:switch (part){
+                       case 1:video("https://m.yhdmp.live/yxsf/player/dpx2/alm3p.html?url=%2fgm3px%2fbd%2d20210129%20yhdzz%20dsj%2f%5bNC%2dRaws%5d%20yhdzz%20dsj%20%2d%2001&amp;getplay_url=%2F_getplay%3Faid%3D21211%26playindex%3D3%26epindex%3D0%26r%3D0.7941837813661428&amp;vlt_l=0&amp;vlt_r=0") 
+                       yhdzz_h3(season,part)
+                       break;
+                      }//集数
+          break;
+      	}//季数
+} 
