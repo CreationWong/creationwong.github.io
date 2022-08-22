@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="text/javascript">
+        function URLadd() {
+            newURL = document.getElementById("BURL").value;
+            biurl = newURL.includes("www.bilibili.com/bangumi/play/");//检查是否有bilibili番剧URL
+            bim = newURL.includes("ep");//检查是否有特定字符
+            if (biurl == true && bim == true) {
+                //正确
+                api = "https://jx.bozrc.com:4433/player/?url=";
+                httpurl = api.concat(newURL);//合并字符串
+                document.getElementById("src").src = httpurl;
+            } else {
+                //错误
+                b23 = newURL.includes("b23.tv");//检查是否为bilibili短链接
+                if (b23 == true) {
+                    alert("寄！URL地址为鼠鼠的短链接，API娘找不到哦:( 通过浏览器娘转换成https://www.bilibili.com/bangumi/play/ep********就行了");
+                } else { 
+                    alert("视频URL地址输入错误，但绝对不是网站的错误");
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" type="text/css" href="https://creationwong.github.io/css/tail.css">
+    <style>
+        #b {
+            color: rgb(0, 183, 255);
+            text-align: center;
+        }
+
+        #input {
+            color: rgb(68, 68, 68);
+            text-align: center;
+            letter-spacing: 5px;
+        }
+    </style>
+</head>
+<h1><a id="b">bilibili</a>番剧解析</h1>
+<p id="input">
+    请填入视频URL地址:<input type="text" id="BURL" /><input type="button" value="解析" onclick="javascript:URLadd()" />
+</p>
+<iframe id="src" src="https://jx.bozrc.com:4433/player/?url=" width="1920" height="1080">
+    <p>您的浏览器不支持显示该网页。</p>
+</iframe>
+<p id="tail">仅供学习交流使用，勿用非法用途! 否则网站不承担任何责任!</p>
+<p id="tail">由 jx.bozrc.com 提供解析服务</p>
+<p id="tail">Copyright © 2022 CreationWong</p>
+
+</html>
