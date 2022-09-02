@@ -2,23 +2,29 @@
 <html>
 
 <head>
+    <link rel="shortcut icon" href="https://creationwong.github.io/images/logo-01.jpg">
     <script type="text/javascript">
         function URLadd() {
             newURL = document.getElementById("BURL").value;
-            biurl = newURL.includes("www.bilibili.com/bangumi/play/");//检查是否有bilibili番剧URL
+            biurl = newURL.includes("bilibili.com/bangumi/play/");//检查是否有bilibili番剧URL
             bim = newURL.includes("ep");//检查是否有特定字符
             if (biurl == true && bim == true) {
                 //正确
-                api = "https://jx.bozrc.com:4433/player/?url=";
-                httpurl = api.concat(newURL);//合并字符串
-                document.getElementById("src").src = httpurl;
+                bimurl = newURL.includes("m.bilibili.com");//检查是否有为bilibili手机番剧URL
+                if (bimurl == false) {
+                    api = "https://jx.bozrc.com:4433/player/?url=";
+                    httpurl = api.concat(newURL);//合并字符串
+                    document.getElementById("src").src = httpurl;
+                } else {
+                    alert("bilibili番剧地址地址没有WWW，API娘讨厌这个地址 o(´^｀)o 把m.bilibili.com改成www.bilibili.com");
+                }
             } else {
                 //错误
                 b23 = newURL.includes("b23.tv");//检查是否为bilibili短链接
                 if (b23 == true) {
-                    alert("寄！URL地址为鼠鼠的短链接，API娘找不到哦:( 通过浏览器娘转换成https://www.bilibili.com/bangumi/play/ep********就行了");
-                } else { 
-                    alert("视频URL地址输入错误，但绝对不是网站的错误");
+                    alert("寄！番剧地址为鼠鼠的短链接，API娘找不到哦:( 通过浏览器娘转换成https://www.bilibili.com/bangumi/play/ep********就行了");
+                } else {
+                    alert("bilibili番剧地址输入错误，但绝对不是网站的错误");
                 }
             }
         }
@@ -30,7 +36,7 @@
             text-align: center;
         }
 
-        iframe{
+        iframe {
             text-align: center;
         }
 
@@ -43,7 +49,7 @@
 </head>
 <h1><a id="b">bilibili</a>番剧解析</h1>
 <p id="input">
-    请填入视频URL地址:<input type="text" id="BURL" /><input type="button" value="解析" onclick="javascript:URLadd()" />
+    请填入视频URL地址:<input type="text" id="BURL" style="width: 18vw; height: 2vh;" /><input type="button" value="解析" onclick="javascript:URLadd()" />
 </p>
 <iframe id="src" src="https://jx.bozrc.com:4433/player/?url=" style="width: 100vw; height: 100vh;">
     <p>您的浏览器不支持显示该网页。</p>
