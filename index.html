@@ -2,41 +2,164 @@
 <html>
 
 <head>
-    <!--网页信息-->
-    <meta charset="utf-8">
     <title>CreationWong 静态网站</title>
     <meta name="CreationWong" content="网站">
+    <meta charset="UTF-8">
     <link rel="shortcut icon" href="images/logo-01.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        /* body 样式 */
+        body {
+            font-family: Arial;
+            margin: 0;
+        }
+
+        /* 标题 */
+        .header {
+            padding: 80px;
+            text-align: center;
+            background: #1abc9c;
+            color: white;
+        }
+
+        /* 标题字体加大 */
+        .header h1 {
+            font-size: 40px;
+        }
+
+        /* 导航 */
+        .navbar {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        /* 导航栏样式 */
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+
+        /* 右侧链接*/
+        .navbar a.right {
+            float: right;
+        }
+
+        /* 鼠标移动到链接的颜色 */
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        /* 列容器 */
+        .row {
+            display: -ms-flexbox;
+            /* IE10 */
+            display: flex;
+            -ms-flex-wrap: wrap;
+            /* IE10 */
+            flex-wrap: wrap;
+        }
+
+        /* 创建两个列边栏 */
+        .side {
+            -ms-flex: 30%;
+            /* IE10 */
+            flex: 30%;
+            background-color: #f1f1f1;
+            padding: 20px;
+        }
+
+        /* 主要的内容区域 */
+        .main {
+            -ms-flex: 70%;
+            /* IE10 */
+            flex: 70%;
+            background-color: white;
+            padding: 20px;
+        }
+
+        /* 测试图片 */
+        .fakeimg {
+            background-color: #aaa;
+            width: 100%;
+            padding: 20px;
+        }
+
+        /* 底部 */
+        .footer {
+            padding: 20px;
+            text-align: center;
+            background: #ddd;
+        }
+
+        /* 响应式布局 - 在屏幕设备宽度尺寸小于 700px 时, 让两栏上下堆叠显示 */
+        @media screen and (max-width: 700px) {
+            .row {
+                flex-direction: column;
+            }
+        }
+
+        /* 响应式布局 - 在屏幕设备宽度尺寸小于 400px 时, 让导航栏目上下堆叠显示 */
+        @media screen and (max-width: 400px) {
+            .navbar a {
+                float: none;
+                width: 100%;
+            }
+        }
+    </style>
 </head>
-<head>
-    <!--外部文件调用-->
-    <link rel="stylesheet" type="text/css" href="https://creationwong.github.io/css/tail.css">
-</head>
-<style>
-    /* CSS样式 */
-    h1 {
-        text-align:center;
-    }
-    h3 {
-        color:rgb(0, 0, 0);
-        text-align:center;
-        letter-spacing:6px;
-    }
-    #main {
-        color:rgb(39, 39, 39);
-        text-align:center;
-        letter-spacing:5px;
-    }
-</style>
 
 <body>
-    <!--正文-->
-    <h1>CreationWong 静态网站</h1>
-    <h3 id="main">在线工具</h3>
-    <p id="main">bilibili番剧解析：<a href=".\html\bilibili_parse.html">开始使用</a></p>
+
+    <div class="header">
+        <h1>CreationWong</h1>
+        <p>网络改变世界</p>
+    </div>
+
+    <div class="navbar">
+        <a href="index.html">首页</a>
+        <a href="tool.html">工具</a>
+    </div>
+
+    <div class="row">
+        <div class="side">
+            <h2>关于我</h2>
+            <img src="/images/IMG.png" style="height:200px;">
+            <p>你好，我是 CreationWong ，一名业余程序员。来自中国</p>
+            <h3>联系方式</h3>
+            <p>推特：<a href="https://twitter.com/@CreationWong">@CreationWong</a></p>
+            <p>GitHub：<a href="https://github.com/CreationWong">CreationWong</a></p>
+            <p><a href="！"></a></p>
+        </div>
+        <div class="main">
+            <h2>标题</h2>
+            <h5>副标题</h5>
+            <div class="fakeimg" style="height:200px;">正在施工！</div>
+            <p>一些文本..</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>由<a href="https://docs.github.com/cn/pages/getting-started-with-github-pages">github-pages</a>提供支持</p>
+        <p>本网站在GitHub上开源 <a href="https://github.com/CreationWong/creationwong.github.io">github</a></p>
+        <p>Copyright © 2022 CreationWong</p>
+    </div>
 
 </body>
-<p id="tail">由<a href="https://docs.github.com/cn/pages/getting-started-with-github-pages">github-pages</a>提供支持</p>
-<p id="tail">本网站在GitHub上开源 <a href="https://github.com/CreationWong/creationwong.github.io">github</a></p>
-<p id="tail">Copyright © 2022 CreationWong</p>
+
 </html>
+
+<!--
+    占位代码
+    <div class="fakeimg" style="height:60px;">临时图像</div>
+    左边链接代码
+    <a href="#" class="right">链接</a>
+-->
