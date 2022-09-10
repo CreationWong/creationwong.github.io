@@ -10,12 +10,13 @@
             if (biurl == true && bim == true) {
                 //正确
                 bimurl = newURL.includes("m.bilibili.com");//检查是否有为bilibili手机番剧URL
-                if (bimurl == false) {
+                wbiurl = newURL.includes("www.bilibili.com");//检查是否为bilibili番剧URL
+                if (bimurl == false && wbiurl == true) {
                     api = "https://jx.bozrc.com:4433/player/?url=";
                     httpurl = api.concat(newURL);//合并字符串
                     document.getElementById("src").src = httpurl;
                 } else {
-                    alert("bilibili番剧地址为手机地址，API娘讨厌这个地址 o(´^｀)o 把m.bilibili.com改成www.bilibili.com");
+                    alert("bilibili番剧地址为特殊地址 ，API娘讨厌这个地址 o(´^｀)o 把***.bilibili.com改成www.bilibili.com");
                 }
             } else {
                 //错误
