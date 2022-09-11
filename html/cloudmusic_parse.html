@@ -7,22 +7,21 @@
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="images/logo-01.jpg">
 </head>
+<link rel="stylesheet" type="text/css" href="https://creationwong.github.io/css/tail.css">
 <style>
     #cm {
         color: rgb(255, 0, 0);
-        text-align: center;
     }
 
     #input {
         color: rgb(68, 68, 68);
-        letter-spacing: 5px;
+        text-align: center;
     }
 </style>
 <h1><a id="cm">网易云音乐</a> 解析</h1>
-<p>请输入网易云音乐链接或ID，点击提交以完成解析工作</p>
-<p>参考输入：https://music.163.com/m/song?id=467800075 或者直接输入ID 467800075</p>
+<p id="tail">参考输入：https://music.163.com/m/song?id=467800075 或者直接输入ID 467800075</p>
 <p id="input">
-    请填入URL地址:<input type="text" id="cmURL" placeholder="https://music.163.com/m/song?id=1859652717"
+    请填入网易云音乐链接或ID:<input type="text" id="cmURL" placeholder="https://music.163.com/m/song?id=1859652717"
         style="width: 18vw; height: 2vh;" /><input type="button" value="解析" onclick="javascript:URLadd()" />
 </p>
 <h3 id="cmid_h">ID：</h3>
@@ -44,7 +43,13 @@
                 newsids = newsidinfo.split("=");//对获得的参数字符串按照“=”进行分割
                 newsid = newsids[1];//得到参数值
                 if (isNaN(newsid)) {
-                    idlen = newsid.length;
+                    sids = newsid.split("&");//对获得的参数字符串按照“=”进行分割
+                    sid = sids[0];//得到参数值
+                    document.getElementById("cmid").innerHTML = "ID:" + sid;//把获取音乐添加到html的标签上
+                    document.getElementById("cmid_h").innerHTML = "ID:" + sid;//把获取音乐添加到html的标签上
+                    idurl = api.concat(sid);//合并字符串得到完整链接
+                    document.getElementById("mp3_src").src = idurl;//填充html中src地址
+                    document.getElementById("audio").load();//查找audio标签
                 } else {
                     document.getElementById("cmid").innerHTML = "ID:" + newsid;//把获取音乐添加到html的标签上
                     document.getElementById("cmid_h").innerHTML = "ID:" + newsid;//把获取音乐添加到html的标签上
@@ -67,5 +72,7 @@
 
     }
 </script>
-
+<p id="tail">为了尊重版权，将不会解析VIP音乐！</p>
+<p id="tail">由网易云音乐官方提供解析服务</p>
+<p id="tail">Copyright © 2022 CreationWong</p>
 </html>
