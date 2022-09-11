@@ -4,9 +4,13 @@
 <head>
     <script type="text/javascript">
         function jinggao() {
-            if(browser.versions.mobile||browser.versions.android||browser.versions.ios){alert("网页API可能请求你打开app，请不要允许！！！");; }
-
+            var u = navigator.userAgent;
+            if (u.indexOf('Android') > -1 || u.indexOf('Linux') > -1) {
+                //安卓手机
+                alert("网页API可能请求你打开app，请不要允许！！！");
+            }
         }
+
         function URLadd() {
             newURL = document.getElementById("BURL").value;
             biurl = newURL.includes("bilibili.com/bangumi/play/");//检查是否有bilibili番剧URL
@@ -16,7 +20,7 @@
                 bimurl = newURL.includes("m.bilibili.com");//检查是否有为bilibili手机番剧URL
                 wbiurl = newURL.includes("www.bilibili.com");//检查是否为bilibili番剧URL
                 if (bimurl == false && wbiurl == true) {
-                    api = "https://jx.bozrc.com:4433/player/?url=";
+                    api = "https://jx.bozrc.com:4433/player";
                     httpurl = api.concat(newURL);//合并字符串
                     document.getElementById("src").src = httpurl;
                 } else {
@@ -53,12 +57,14 @@
         }
     </style>
 </head>
+
 <body onload="jinggao()"></body>
 <h1><a id="b">bilibili</a>番剧解析</h1>
 <p id="input">
-    请填入视频URL地址:<input type="text" id="BURL" style="width: 18vw; height: 2vh;" /><input type="button" value="解析" onclick="javascript:URLadd()" />
+    请填入视频URL地址:<input type="text" id="BURL" style="width: 18vw; height: 2vh;" /><input type="button" value="解析"
+        onclick="javascript:URLadd()" />
 </p>
-<iframe id="src" src="https://jx.bozrc.com:4433/player/?url=" style="width: 100vw; height: 100vh;">
+<iframe id="src" src="https://jx.bozrc.com:4433/player" style="width: 100vw; height: 100vh;">
     <p>您的浏览器不支持显示该网页。</p>
 </iframe>
 <p id="tail">仅供学习交流使用，勿用非法用途! 否则网站不承担任何责任!</p>
