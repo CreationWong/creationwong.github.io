@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title id="cmid">CreationWong 静态工具</title>
+    <meta name="CreationWong" content="网站">
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="images/logo-01.jpg">
+</head>
+<style>
+    #cm {
+        color: rgb(255, 0, 0);
+        text-align: center;
+    }
+
+    #input {
+        color: rgb(68, 68, 68);
+        letter-spacing: 5px;
+    }
+</style>
+<h1><a id="cm">网易云音乐</a> 解析</h1>
+<p>请输入网易云音乐链接或ID，点击提交以完成解析工作</p>
+<p>参考输入：https://music.163.com/m/song?id=467800075 或者直接输入ID 467800075</p>
+<p id="input">
+    请填入URL地址:<input type="text" id="cmURL" placeholder="https://music.163.com/m/song?id=1859652717"
+        style="width: 18vw; height: 2vh;" /><input type="button" value="解析" onclick="javascript:URLadd()" />
+</p>
+<h3 id="cmid_h">ID：</h3>
+<audio controls id="audio">
+    <source id="mp3_src" type="audio/mpeg">
+    您的浏览器不支持 audio 元素。
+</audio>
+<script>
+    function URLadd() {
+        api = "https://music.163.com/song/media/outer/url?id="//调用api，用作字符串
+        newURL = document.getElementById("cmURL").value;
+        if (isNaN(newURL))//判断id是否为数字
+        {
+            wcwurl = newURL.includes("music.163.com");//检查是否为music.163.com
+            if (wcwurl == true) {
+                len = newURL.length;//获取url的长度
+                offset = newURL.indexOf("?");//设置参数字符串开始的位置
+                newsidinfo = newURL.substr(offset, len)//取出参数字符串
+                newsids = newsidinfo.split("=");//对获得的参数字符串按照“=”进行分割
+                newsid = newsids[1];//得到参数值
+                if (isNaN(newsid)) {
+                    idlen = newsid.length;
+                } else {
+                    document.getElementById("cmid").innerHTML = "ID:" + newsid;//把获取音乐添加到html的标签上
+                    document.getElementById("cmid_h").innerHTML = "ID:" + newsid;//把获取音乐添加到html的标签上
+                    idurl = api.concat(newsid);//合并字符串得到完整链接
+                    document.getElementById("mp3_src").src = idurl;//填充html中src地址
+                    document.getElementById("audio").load();//查找audio标签
+                }
+            } else {
+                alert("网易云音乐链接输入错误，但绝对不是网站的错误");
+                cmURL.value = "";//清空输入框
+            }
+        } else {
+            document.getElementById("cmid").innerHTML = "ID:" + newURL;//把获取音乐添加到html的标签上
+            document.getElementById("cmid_h").innerHTML = "ID:" + newURL;//把获取音乐添加到html的标签上
+            idurl = api.concat(newURL);//合并字符串得到完整链接
+            document.getElementById("mp3_src").src = idurl;//填充html中src地址
+            document.getElementById("audio").load();//查找audio标签
+        }
+
+
+    }
+</script>
+
+</html>

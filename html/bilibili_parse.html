@@ -3,6 +3,10 @@
 
 <head>
     <script type="text/javascript">
+        function jinggao() {
+            if(browser.versions.mobile||browser.versions.android||browser.versions.ios){alert("网页API可能请求你打开app，请不要允许！！！");; }
+
+        }
         function URLadd() {
             newURL = document.getElementById("BURL").value;
             biurl = newURL.includes("bilibili.com/bangumi/play/");//检查是否有bilibili番剧URL
@@ -22,9 +26,11 @@
                 //错误
                 b23 = newURL.includes("b23.tv");//检查是否为bilibili短链接
                 if (b23 == true) {
-                    alert("寄！番剧地址为鼠鼠的短链接，API娘找不到哦:( 通过浏览器娘转换成https://www.bilibili.com/bangumi/play/ep********就行了");
+                    alert("寄！番剧地址为鼠鼠的短链接，API娘找不到哦:( 正在通过浏览器娘转换成https://www.bilibili.com/bangumi/play/ep********就行了");
+                    location.href = newURL;//运行URL
                 } else {
                     alert("bilibili番剧地址输入错误，但绝对不是网站的错误");
+                    newURL.value = "";//清空输入框
                 }
             }
         }
@@ -47,6 +53,7 @@
         }
     </style>
 </head>
+<body onload="jinggao()"></body>
 <h1><a id="b">bilibili</a>番剧解析</h1>
 <p id="input">
     请填入视频URL地址:<input type="text" id="BURL" style="width: 18vw; height: 2vh;" /><input type="button" value="解析" onclick="javascript:URLadd()" />
