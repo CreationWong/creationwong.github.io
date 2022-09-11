@@ -20,7 +20,7 @@
                 bimurl = newURL.includes("m.bilibili.com");//检查是否有为bilibili手机番剧URL
                 wbiurl = newURL.includes("www.bilibili.com");//检查是否为bilibili番剧URL
                 if (bimurl == false && wbiurl == true) {
-                    api = "https://jx.bozrc.com:4433/player";
+                    api = "https://www.nxflv.com/?url=";
                     httpurl = api.concat(newURL);//合并字符串
                     document.getElementById("src").src = httpurl;
                 } else {
@@ -64,11 +64,11 @@
     请填入视频URL地址:<input type="text" id="BURL" style="width: 18vw; height: 2vh;" /><input type="button" value="解析"
         onclick="javascript:URLadd()" />
 </p>
-<iframe id="src" src="https://jx.bozrc.com:4433/player" style="width: 100vw; height: 100vh;">
+<iframe id="src" src="https://www.nxflv.com/?url=" style="width: 100vw; height: 100vh;">
     <p>您的浏览器不支持显示该网页。</p>
 </iframe>
 <p id="tail">仅供学习交流使用，勿用非法用途! 否则网站不承担任何责任!</p>
-<p id="tail">由 jx.bozrc.com 提供解析服务</p>
+<p id="tail">由 nxflv.com 提供解析服务</p>
 <p id="tail">Copyright © 2022 CreationWong</p>
 
 </html>
