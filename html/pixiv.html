@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CreationWong 静态网站</title>
+    <meta name="CreationWong" content="网站">
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="images/logo-01.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+    <head>
+        <!--外部文件调用-->
+        <link rel="stylesheet" type="text/css" href="https://creationwong.github.io/css/tail.css">
+        <link rel="stylesheet" type="application/javascript" href="js/r18.js">
+    </head>
+    <script>
+        function URL_png() {
+            api = "https://pixiv.re/";
+            //
+            url_id = document.getElementById("url").value;
+            purl = url_id.includes("www.pixiv.net/artworks");//检查是否有www.pixiv.net/artworks
+            if (purl == true) {
+                //为URL
+                url_id_01 = url_id.match(/.(\d{4,10})/);//获取URL中的4-10位的数字，返回JOSN
+                id = url_id_01[1];
+                id_file = id.concat(".jpg");//合并字符串得到完整链接
+                httpurl = api.concat(id_file);//合并字符串
+                document.getElementById("src").src = httpurl;
+            } else if (isNaN(url_id) == false) {
+                //当输入ID
+                id_file = url_id.concat(".jpg");//合并字符串得到完整链接
+                httpurl = api.concat(id_file);//合并字符串
+                document.getElementById("src").src = httpurl;
+            } else {
+                alert("错误！你输入的URL有问题，请排查是否正确！  你输入的信息：" + url_id);//返回错误信息
+            }
+
+        }
+    </script>
+</body>
+<h1></h1>
+<table border="1">
+    <tr>
+        <th>图片解析</th>
+    </tr>
+    <tr>
+        <td>
+            <p>
+                <input type="text" id="url" placeholder="请输入 Pixiv 图片URL或ID" style="width: 18vw; height: 2vh;">
+                <input type="submit" onclick="javascript:URL_png()" value="提交">
+            </p>
+        </td>
+    </tr>
+</table>
+
+
+<img id="src">
+<p id="tail">仅供学习交流使用，勿用非法用途! 否则网站不承担任何责任!</p>
+<p id="tail">由 pixiv.cat 提供解析服务</p>
+<p id="tail">Copyright © 2022 CreationWong</p>
+
+</html>

@@ -43,7 +43,7 @@
                 newsids = newsidinfo.split("=");//对获得的参数字符串按照“=”进行分割
                 newsid = newsids[1];//得到参数值
                 if (isNaN(newsid)) {
-                    sids = newsid.split("&");//对获得的参数字符串按照“=”进行分割
+                    sids = newsid.split("&");//对获得的参数字符串按照“&”进行分割
                     sid = sids[0];//得到参数值
                     document.getElementById("cmid").innerHTML = "ID:" + sid;//把获取音乐添加到html的标签上
                     document.getElementById("cmid_h").innerHTML = "ID:" + sid;//把获取音乐添加到html的标签上
