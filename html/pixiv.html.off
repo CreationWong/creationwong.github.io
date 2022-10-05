@@ -1,11 +1,11 @@
 <!DOCTYPE html>
+
 <html>
 
 <head>
     <title>CreationWong 静态网站</title>
     <meta name="CreationWong" content="网站">
     <meta charset="UTF-8">
-    <link rel="shortcut icon" href="images/logo-01.jpg">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
@@ -14,10 +14,10 @@
     <head>
         <!--外部文件调用-->
         <link rel="stylesheet" type="text/css" href="https://creationwong.github.io/css/tail.css">
-        <link rel="stylesheet" type="application/javascript" href="js/r18.js">
+        <script src="js/r18.js"></script>
     </head>
     <script>
-        function URL_png() {
+        function URL_cat() {
             api = "https://pixiv.re/";
             //
             url_id = document.getElementById("url").value;
@@ -50,7 +50,7 @@
         <td>
             <p>
                 <input type="text" id="url" placeholder="请输入 Pixiv 图片URL或ID" style="width: 18vw; height: 2vh;">
-                <input type="submit" onclick="javascript:URL_png()" value="提交">
+                <input type="submit" onclick="javascript:URL_cat()" value="提交">
             </p>
         </td>
     </tr>

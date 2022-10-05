@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>CreationWong 静态网站</title>
+    <meta name="CreationWong" content="网站">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+    <head>
+        <!--外部文件调用-->
+        <link rel="stylesheet" type="text/css" href="https://creationwong.github.io/css/tail.css">
+        <script src="js/r18_2.0.js"></script>
+    </head>
+    <script>
+        //刷新
+        function refresh() {
+            var user = getCookie("username");
+            if (user != "") {
+                document.getElementById("src").src = "https://sex.nyan.xyz/api/v2/img";//填充html中src地址
+            } else {
+                checkCookie()
+            }
+        }
+        function r18() {
+            var user = getCookie("username");
+            if (user != "NOPASS") {
+                document.getElementById("src").src = "https://sex.nyan.xyz/api/v2/img?r18=true";//填充html中src地址
+            } else {
+                checkCookie()
+                alert("没有授权，无法访问！");
+            }
+
+        }
+    </script>
+</body>
+<h1>随机二次元图片</h1>
+<p>
+    <input type="submit" onclick="javascript:refresh()" value="显示内容">
+    <input type="submit" onclick="javascript:r18()" value="显示授权内容">
+</p>
+<iframe id="src" style="width: 80vw; height: 100vh;">
+    <p>您的浏览器不支持显示该网页。</p>
+</iframe>
+
+<p id="tail">仅供学习交流使用，勿用非法用途! 否则网站不承担任何责任!</p>
+<p id="tail">由 sex.nyan.xyz 提供解析服务</p>
+<p id="tail">Copyright © 2022 CreationWong</p>
+
+</html>
