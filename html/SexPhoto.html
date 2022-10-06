@@ -72,7 +72,7 @@
         }
         function r18() {
             var user = getCookie("username");
-            if (user != "NOPASS" || user != "") {
+            if (user != "NOPASS" && user != "") {
                 document.getElementById("src").src = "https://sex.nyan.xyz/api/v2/img?r18=true";//填充html中src地址
             } else {
                 alert("没有授权，无法访问！");
