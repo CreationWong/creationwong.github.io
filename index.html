@@ -7,6 +7,21 @@
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="images/logo-01.jpg">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+        function Herrscher() {
+            element = document.getElementById('Herrscher')
+            if (element.src.match("bh3")) {
+                element.src = "/images/IMG.png";
+                x = document.getElementById("of");  // 找到元素
+                x.innerHTML = "你好，我是 CreationWong 来自中国，一名网络技术生。";    // 改变内容
+            }
+            else {
+                element.src = "https://uploadstatic.mihoyo.com/bh3-wiki/2021/09/24/81417673/846743ce1e4d3bf5b7c343662793f472_6061847939618725749.png";
+                x = document.getElementById("of");  // 找到元素
+                x.innerHTML = "崩坏告诉我，怎样才能消灭人类的罪恶";    // 改变内容
+            }
+        }
+    </script>
     <style>
         * {
             box-sizing: border-box;
@@ -134,8 +149,8 @@
     <div class="row">
         <div class="side">
             <h2>关于我</h2>
-            <img src="/images/IMG.png" style="height:200px;">
-            <p>你好，我是 CreationWong 来自中国，一名网络技术生。</p>
+            <img id="Herrscher" onclick="Herrscher()" src="/images/IMG.png" style="height:200px;">
+            <p id="of">你好，我是 CreationWong 来自中国，一名网络技术生。</p>
             <h3>联系方式</h3>
             <p>推特：<a href="https://twitter.com/@CreationWong">@CreationWong</a></p>
             <p>GitHub：<a href="https://github.com/CreationWong">CreationWong</a></p>
@@ -156,8 +171,8 @@
             <hr>
             <img src="images\kl_qqn.gif" width="200" height="210">
             <p>现在已经开通爱发电募捐通道请大家多多支持！求求你了</p>
-            <iframe id="afdian_leaflet_creationwong_web" src="https://afdian.net/leaflet?slug=creationwong_web" width="100%" scrolling="no"
-                height="200" frameborder="0"></iframe>
+            <iframe id="afdian_leaflet_creationwong_web" src="https://afdian.net/leaflet?slug=creationwong_web"
+                width="100%" scrolling="no" height="200" frameborder="0"></iframe>
             <script>document.body.clientWidth < 700 ? document.getElementById("afdian_leaflet_creationwong_web").width = "100%" : document.getElementById("afdian_leaflet_creationwong_web").width = "640"</script>
         </div>
     </div>
@@ -165,7 +180,7 @@
     <div class="footer">
         <p>由<a href="https://docs.github.com/cn/pages/getting-started-with-github-pages">github-pages</a>提供支持</p>
         <p>本网站在GitHub上开源 <a href="https://github.com/CreationWong/creationwong.github.io">github</a></p>
-        <p>Copyright © 2022 CreationWong</p>
+        <p>Copyright © 2022 creationwong</p>
     </div>
 
 </body>
