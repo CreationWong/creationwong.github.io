@@ -43,6 +43,7 @@
                     while (testV < 3) {
                         if (pass1 == password) {
                             setCookie("username", user, 30);
+                            alert(user+"成功授权！");
                             break;
                         }
                         testV += 1;
@@ -61,7 +62,7 @@
             }
         }
         //刷新
-        function refresh() {
+        function r17() {
             var user = getCookie("username");
             if (user != "") {
                 document.getElementById("src").src = "https://sex.nyan.xyz/api/v2/img";//填充html中src地址
@@ -71,24 +72,24 @@
         }
         function r18() {
             var user = getCookie("username");
-            if (user != "NOPASS") {
+            if (user != "NOPASS" || user != "") {
                 document.getElementById("src").src = "https://sex.nyan.xyz/api/v2/img?r18=true";//填充html中src地址
             } else {
-                checkCookie()
                 alert("没有授权，无法访问！");
             }
-
+        }
+        function refresh() {
+            history.go(0);
         }
     </script>
 </body>
 <h1>随机二次元图片</h1>
 <p>
-    <input type="submit" onclick="javascript:refresh()" value="显示内容">
+    <input type="submit" onclick="javascript:r17()" value="显示内容">
     <input type="submit" onclick="javascript:r18()" value="显示授权内容">
+    <input type="submit" onclick="javascript:refresh()" value="刷新">
 </p>
-<iframe id="src" style="width: 100vw; height: 150vh;">
-    <p>您的浏览器不支持显示该网页。</p>
-</iframe>
+<img id="src">
 
 <p id="tail">仅供学习交流使用，勿用非法用途! 否则网站不承担任何责任!</p>
 <p id="tail">由 sex.nyan.xyz 提供解析服务</p>
