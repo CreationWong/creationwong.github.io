@@ -20,7 +20,7 @@
                 bimurl = newURL.includes("m.bilibili.com");//检查是否有为bilibili手机番剧URL
                 wbiurl = newURL.includes("www.bilibili.com");//检查是否为bilibili番剧URL
                 if (bimurl == false && wbiurl == true) {
-                    api = "https://www.nxflv.com/?url=";
+                    api = "https://jx.aidouer.net/?url=";
                     httpurl = api.concat(newURL);//合并字符串
                     document.getElementById("src").src = httpurl;
                 } else {
